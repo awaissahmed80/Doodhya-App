@@ -1,17 +1,33 @@
 {
-  "name": "Doodhya",
+  "name": "doodhya",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "ios": "npx react-native run-ios --udid='7CA8A644-584E-463D-963C-21E4078D116B'",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.21.0",
+    "@react-navigation/bottom-tabs": "^6.5.11",
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.17",
+    "@reduxjs/toolkit": "^2.0.1",
+    "async-mutex": "^0.4.1",
+    "dayjs": "^1.11.10",
+    "native-base": "^3.4.28",
     "react": "18.2.0",
-    "react-native": "0.73.2"
+    "react-native": "0.73.2",
+    "react-native-config": "^1.5.1",
+    "react-native-safe-area-context": "^4.8.2",
+    "react-native-screens": "^3.29.0",
+    "react-native-splash-screen": "^3.3.0",
+    "react-native-svg": "^14.1.0",
+    "react-native-vector-icons": "^10.0.3",
+    "react-redux": "^9.1.0",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -27,8 +43,7 @@
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
-    "react-test-renderer": "18.2.0",
-    "typescript": "5.0.4"
+    "react-test-renderer": "18.2.0"
   },
   "engines": {
     "node": ">=18"
