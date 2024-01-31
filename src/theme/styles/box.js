@@ -1,7 +1,6 @@
 export const box = {
     baseStyle: {
-        shadow: "none",
-        
+        shadow: "none",        
     },
     variants: {        
         wrapper:{

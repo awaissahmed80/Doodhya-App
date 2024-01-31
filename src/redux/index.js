@@ -14,8 +14,10 @@ import {
 
 import authSlice from './slices/auth.slice'
 import userSlice from './slices/user.slice'
+import itemSlice from './slices/item.slice'
 
-import { authApi, userApi } from './api'
+import { authApi, userApi, itemApi } from './api'
+
 
 
 const persistConfig = {
@@ -28,9 +30,12 @@ const persistConfig = {
 
 const  rootReducer = combineReducers({
     [authApi.reducerPath]: authApi.reducer,        
-    [userApi.reducerPath]: userApi.reducer,        
+    [userApi.reducerPath]: userApi.reducer,
+    [itemApi.reducerPath]: itemApi.reducer,
     auth: authSlice,
-    user: userSlice,    
+    items: itemSlice,
+    user: userSlice,   
+
 })
 
 
@@ -47,6 +52,7 @@ const AppStore = configureStore({
         },
     }).concat(
         authApi.middleware,
+        itemApi.middleware,
         userApi.middleware,        
     ),
 });

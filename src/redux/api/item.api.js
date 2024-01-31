@@ -1,13 +1,13 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
 import { baseQuery } from './baseQuery'
 
-export const candidateApi = createApi({
-    reducerPath: 'candidateApi',
-    baseQuery: baseQuery('/data'),
+export const itemApi = createApi({
+    reducerPath: 'itemApi',
+    baseQuery: baseQuery('/items'),
     endpoints: (builder) => ({               
-        getHalqas: builder.query({
-            query: (type) => ({
-              url: `/${type}.json`,
+        get: builder.query({
+            query: () => ({
+              url: ``,
               method: "GET",          
             }),
             transformErrorResponse: (response) => {   

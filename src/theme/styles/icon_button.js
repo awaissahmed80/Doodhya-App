@@ -19,6 +19,11 @@ export const icon_button = {
                     _icon: {color: colorScheme+".500", size: 6},
                     _pressed: {bg: colorScheme+".50", _icon:{color: colorScheme+".600"}}
                 })
-        }),        
+        }),   
+        "unstyled":{
+            _pressed:{
+                opacity: 0.5
+            }
+        }     
     }
 }

@@ -40,6 +40,26 @@ export const shadows = {
         shadowRadius: 3,
         elevation: 3,  
     },
+    "app-bar":{
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.10,
+        shadowRadius: 3,
+        elevation: 3,  
+    },
+    "app-bar-dark":{
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        shadowOpacity: 0.40,
+        shadowRadius: 3,
+        elevation: 3,  
+    },
     "dark2":{
         shadowColor: '#000',
         shadowOffset: {
