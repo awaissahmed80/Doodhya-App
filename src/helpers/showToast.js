@@ -21,7 +21,7 @@ export const showToast = {
         NBToast.show({
             render: () => {
               return (
-                <Box  zIndex={999} left={0} right={0} bg="red.500" top={0} mt="-50px" minW="100%"  shadow="md" px="15px" py={5} pt={10}  rounded="none" mb={1}>
+                <Box safeArea  zIndex={999} left={0} right={0} bg="red.500" top={0}    shadow="md" px="15px" py={5} rounded="none" mb={1}>
                     <Text color="white" fontSize="sm">{message}</Text>
                 </Box>
               )

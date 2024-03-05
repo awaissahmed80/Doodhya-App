@@ -10,7 +10,7 @@ export const tag = {
             px: 3,
             py:0.5,
             _text:{
-                fontSize:12
+                fontSize:14
             }
         },
         md:{

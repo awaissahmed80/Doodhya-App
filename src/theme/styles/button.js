@@ -49,8 +49,10 @@ export const button = {
         "subtle": ({colorScheme}) => ({            
             ...(
                 {
+                    
+                    bg: colorScheme === "gray" ? colorScheme+".200" : colorScheme+".50",
                     _text:{
-                        color: colorScheme+".500",                
+                        color: colorScheme+".500",                                        
                     },
                     _pressed:{
                         color: colorScheme+".500",                

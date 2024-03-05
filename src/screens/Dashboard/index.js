@@ -1,24 +1,24 @@
 import React from "react"
 import { Box, Image, ScrollView, Button, StatusBar, useColorModeValue } from "native-base"
-import { useNavigation } from "@react-navigation/native"
+// import { useNavigation } from "@react-navigation/native"
 // import { useApp, useBoolean } from "../../hooks"
-import { assets } from "../../../assets"
-import { useApp, useBoolean } from "../../../hooks"
+import { assets } from "../../assets"
+import { useApp, useBoolean } from "../../hooks"
 // import { setAuthToken } from "../../helpers"
 
-export default function Home(){
+export default function Dashboard(){
 
-    const { logout } = useApp()
-    const { navigate } = useNavigation()
+    // const { logout } = useApp()
+    // const { navigate } = useNavigation()
     const [ isLoading, setLoading ] = useBoolean(false)
     const logo = useColorModeValue(assets.logo, assets.logo_dark)
-    // const { logout } = useApp()
+    const { logout } = useApp()
     // const [ isLoading, setLoading ] = useBoolean(false)
 
     
 
     const handleLogout = async() => {
-        setLoading.on()          
+        setLoading.on()    
         logout()
             .then(() => {
                 setLoading.off()                
@@ -37,8 +37,8 @@ export default function Home(){
             <ScrollView flex={1}>
 
                                 
-                <Button onPress={() => navigate('PlaceOrder')}>Place Order</Button>
-                <Button isLoading={isLoading} onPress={() => handleLogout()}>Logouttt</Button>
+                {/* <Button onPress={() => navigate('Login')}>Login</Button> */}
+                <Button isLoading={isLoading} onPress={() => handleLogout()}>Logout</Button>
             </ScrollView>
             
         </Box>

@@ -8,7 +8,7 @@ export const InputPassword = React.forwardRef(({...rest}, ref) => {
     return(
         <Input 
             type={show ? "text" : "password"}
-            InputRightElement={<Icon mr={2} name={show ? "show" : "hide"}  onPress={() => setShow(!show)} color={show ? "primary.500" : "gray.500"} size={5} />}
+            InputRightElement={<Icon mr={2} name={show ? "eye" : "eye-off"}  onPress={() => setShow(!show)} color={show ? "primary.500" : "gray.500"} size={5} />}
             {...rest}
         />
     )

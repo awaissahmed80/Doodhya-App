@@ -47,8 +47,16 @@ export const theme = extendTheme({
         Text: text,
         IconButton: icon_button,
         Heading: heading,
-        Pressable: pressable,
+        Pressable: pressable,        
         Tag: tag,
+        FlatList:{
+            flex: 1,
+            defaultProps:{                
+                contentContainerStyle:{                    
+                    flexGrow: 1,
+                }
+            }
+        },
         ScrollView: {         
             flex: 1,   
             defaultProps:{                

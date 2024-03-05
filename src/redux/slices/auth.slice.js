@@ -22,7 +22,10 @@ const authSlice = createSlice({
         logout: (state  ) => {                                
             state.token = null
             state.user = null
-        }        
+        },
+        // addBalance: ( state, { payload: { amount }} ) => {
+        //     state.user.balance = state.user.balance + (amount)
+        // }      
     },
     extraReducers: (builder) => {
         builder.addMatcher(

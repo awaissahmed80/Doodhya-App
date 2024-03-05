@@ -1,2 +1,5 @@
 export * from './Icon'
 export * from './InputPassword'
+export * from './QtyInput'
+export * from './NumberInput'
+export * from './ImagePicker'

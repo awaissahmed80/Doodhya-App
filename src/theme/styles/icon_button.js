@@ -2,7 +2,8 @@ export const icon_button = {
     baseStyle:{
         shadow: "none",
         _disabled:{
-            bg: 'gray.600'
+            // bg: 'gray.600'
+            // colorScheme: "gray"
         }
 
     },
@@ -24,6 +25,18 @@ export const icon_button = {
             _pressed:{
                 opacity: 0.5
             }
-        }     
+        },
+        "app-ghost":{                  
+            _pressed: {
+                opacity: 0.5
+            },            
+            dark:{
+                _text: {color: "white"}
+            },
+            light:{
+                _text: {color: "gray.600"}
+            }
+
+        }    
     }
 }

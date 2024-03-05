@@ -24,7 +24,8 @@ export default function Login(){
             .then((res) => {                
             })
             .catch((error) => {                
-                setErrors(error?.errors?.errors)                        
+                setErrors(error?.errors?.errors || null)                        
+                console.log("Error", error)
                 showToast.error(error?.message || error?.error || "Invalid Request")
                 
             })
@@ -37,9 +38,9 @@ export default function Login(){
     return(
         
         <Box flex={1} safeArea variant="wrapper">
-            <StatusBar  />            
-            <ScrollView flex={1} keyboardShouldPersistTaps="handled">
-                <KeyboardAvoidingView flex={1} _ios={{ behavior: "padding" }}>
+            <StatusBar  />                        
+            <KeyboardAvoidingView flex={1} _ios={{ behavior: "padding" }}>
+                <ScrollView flex={1} keyboardShouldPersistTaps="always">
                     <Box w="100%" maxW={340} flex={1} mx="auto">
                         <Box p={10} flex={2} justifyContent="center">
                             <Image mx="auto" source={logo} alt="Dwelling Doctors" w={220} h={150} resizeMode="contain" />
@@ -91,9 +92,9 @@ export default function Login(){
                                     
                                 </VStack>
                             </Box>
-                        </Box>
-                    </KeyboardAvoidingView>
-                </ScrollView>            
+                        </Box>                    
+                    </ScrollView>            
+                </KeyboardAvoidingView>
             </Box>
     )
 }

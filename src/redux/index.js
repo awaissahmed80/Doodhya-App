@@ -15,8 +15,19 @@ import {
 import authSlice from './slices/auth.slice'
 import userSlice from './slices/user.slice'
 import itemSlice from './slices/item.slice'
+import areaSlice from './slices/area.slice'
+import orderSlice from './slices/order.slice'
+import basketSlice from './slices/basket.slice'
+import driverSlice from './slices/driver.slice'
+import customerSlice from './slices/customer.slice'
+import entrySlice from './slices/entry.slice'
+import billSlice from './slices/bill.slice'
 
-import { authApi, userApi, itemApi } from './api'
+
+import { authApi, userApi, itemApi, 
+    areaApi, orderApi, driverApi, 
+    customerApi, entryApi, billApi
+} from './api'
 
 
 
@@ -24,7 +35,7 @@ const persistConfig = {
     key: Config.STORAGE_KEY,
     storage: AsyncStorage,
     version: 1,
-    whitelist: ['auth']    
+    whitelist: ['auth', 'basket']    
 };
 
 
@@ -32,9 +43,22 @@ const  rootReducer = combineReducers({
     [authApi.reducerPath]: authApi.reducer,        
     [userApi.reducerPath]: userApi.reducer,
     [itemApi.reducerPath]: itemApi.reducer,
+    [areaApi.reducerPath]: areaApi.reducer,
+    [orderApi.reducerPath]: orderApi.reducer,
+    [driverApi.reducerPath]: driverApi.reducer,
+    [customerApi.reducerPath]: customerApi.reducer,
+    [entryApi.reducerPath]: entryApi.reducer,
+    [billApi.reducerPath]: billApi.reducer,
     auth: authSlice,
+    basket: basketSlice,
     items: itemSlice,
     user: userSlice,   
+    areas: areaSlice,
+    orders: orderSlice,
+    drivers: driverSlice,
+    customers: customerSlice,
+    entries: entrySlice,
+    bills: billSlice
 
 })
 
@@ -53,7 +77,13 @@ const AppStore = configureStore({
     }).concat(
         authApi.middleware,
         itemApi.middleware,
-        userApi.middleware,        
+        userApi.middleware,   
+        areaApi.middleware,
+        orderApi.middleware,
+        driverApi.middleware,
+        customerApi.middleware,
+        entryApi.middleware,
+        billApi.middleware 
     ),
 });
 

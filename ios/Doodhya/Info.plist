@@ -31,8 +31,14 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Enable camera access to easily capture and share photos and videos within the app</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Enable photo library access to conveniently select and upload images and documents from your device within the app</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Enable photo library access to conveniently select and upload images and documents from your device within the app</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>DMSans-ExtraBold.ttf</string>

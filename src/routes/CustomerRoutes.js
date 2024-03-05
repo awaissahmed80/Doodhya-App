@@ -1,29 +1,50 @@
 import React from 'react'
 import { Box, HStack, IconButton } from 'native-base'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Icon } from '../ui'
+import { useApp } from '../hooks'
 
-import Home from '../screens/CustomerScreens/Home'
+import Dashboard from '../screens/Home'
+import Orders from '../screens/CustomerScreens/Orders'
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
-const Tabs = ({ state, descriptors, navigation }) => {
+const Tabs = ({ _, __, navigation }, logout) => {
 
-    const { navigate } = navigation    
+    const { navigate } = navigation  
+    
+
     return(
-        <Box bg="white" py={1} shadow="footerDark" safeAreaBottom>
+        <Box bg="white" py={3}  safeAreaBottom>
             <HStack alignItems="center"  justifyContent="space-between" px={4}>
-                <IconButton icon={<Icon name="home" />} onPress={() => navigate('Home')} />
-                {/* <TabItem label="Explore" color="gray" onPress={() => navigate('MainDashboard')} icon="search" isActive={state?.index === 0} />                
-                <TabItem label="Profile" color="gray" onPress={() => navigate('Profile')} icon="person-circle-outline" isActive={state?.index === 2} />                                 */}
+                <IconButton colorScheme="surface" icon={<Icon name="home-sharp" />} onPress={() => navigate('Home')} />
+                <IconButton colorScheme="surface" icon={<Icon name="calendar-sharp" />} onPress={() => navigate('History')} />
+                <IconButton colorScheme="surface" icon={<Icon name="file-tray-full-sharp" />} onPress={() => navigate('Orders')} />                
+                <IconButton colorScheme="surface" icon={<Icon name="person-sharp" />} onPress={() => logout()} />                
             </HStack>            
         </Box>
     )
 }
-export const CustomerRoutes = () => {
+export const CustomerTabs = () => {
+
+    const { logout } = useApp()  
+
     return(
-        <Tab.Navigator  screenOptions={{gestureEnabled : false, headerShown: false, animation: "fade"}} tabBar={(props) => Tabs(props)}>
-            <Tab.Screen name="Home" component={Home} />
+        <Tab.Navigator  screenOptions={{gestureEnabled : false, headerShown: false, animation: "fade"}} tabBar={(props) => Tabs(props, logout)}>
+            <Tab.Screen name="Home" component={Dashboard} />
+            <Tab.Screen name="Orders" component={Orders} />
         </Tab.Navigator> 
     )
+}
+
+
+export const CustomerRoutes = () => {
+    return(
+        <Stack.Navigator  screenOptions={{gestureEnabled : false, headerShown: false, animation: "fade_from_bottom"}}>
+            <Stack.Screen name="Home" component={CustomerTabs} />            
+        </Stack.Navigator>
+    )
+    
 }

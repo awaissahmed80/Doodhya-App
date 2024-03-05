@@ -22,11 +22,9 @@ export const text={
         }
     },
     variants: {        
-        caption_label:{
-            textTransform: 'uppercase',
-            fontSize: '13px',
-            mb: 1,
-            fontWeight:800
+        label:{            
+            fontSize: 15,            
+            fontWeight:500,                
         },
         caption:{
             textTransform: 'uppercase',
@@ -45,12 +43,7 @@ export const text={
         value:{            
             fontSize: 15,
             opacity:1,
-        },
-        label:{
-            fontSize: 14,
-            fontWeight: 700,
-            opacity: 0.55,            
-        },
+        },        
         title:{
             fontSize: 16,
             fontWeight: 600,

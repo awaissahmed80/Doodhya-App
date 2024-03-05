@@ -12,7 +12,7 @@ Iconly.loadFont();
   
 
 
-const Icon = React.forwardRef(({name, size, type="iconly", ...props}, ref) => {      
+const Icon = React.forwardRef(({name, size, type="ionicon", ...props}, ref) => {      
     let innerSize = 5
     switch(size){
         case "lg":

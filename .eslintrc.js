@@ -12,6 +12,7 @@ module.exports = {
     },
     rules: {
       'no-unused-vars': 'error',
+      'no-bitwise': 'off',
       'prettier/prettier': 0
     },
 };
