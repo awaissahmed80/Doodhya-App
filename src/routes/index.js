@@ -7,15 +7,17 @@ import { AdminRoutes } from './AdminRoutes'
 import { DriverRoutes } from './DriverRoutes'
 // const MainLayout = lazy(() => import('../layouts/MainLayout'))
 
-import Home from '../screens/Home'
+import Main from '../screens/Main'
 // import Dashboard from '../screens/Dashboard'
 import Splash from '../screens/Splash'
 import Login from '../screens/Auth/Login'
+import Signup from '../screens/Auth/Signup'
 import OrderWizard from '../screens/OrderWizard'
 import DeliveryOptions from '../screens/OrderWizard/DeliveryOptions'
 // import PlaceOrder from '../screens/CustomerScreens/PlaceOrder'
 import Checkout from '../screens/OrderWizard/Checkout'
 import { useApp } from '../hooks'
+import ForgotPassword from '../screens/Auth/ForgotPassword'
 
 const Stack = createNativeStackNavigator();
 const navigationRef = React.createRef();
@@ -61,8 +63,10 @@ export default function Routes ()  {
                 {                
                     (!user || !token) &&       
                     <>
-                    <Stack.Screen name="Home" component={Home} />
-                    <Stack.Screen name="Login" component={Login} />            
+                    <Stack.Screen name="Main" component={Main} />
+                    <Stack.Screen name="Login" component={Login} />
+                    <Stack.Screen name="Signup" component={Signup} />
+                    <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
                     </> 
                 }{
                     (user?.role === 'ADMIN') &&
@@ -75,7 +79,7 @@ export default function Routes ()  {
                 }
                 {
                     (user?.role === 'CUSTOMER') &&  
-                    <Stack.Screen name="Dashboard" component={CustomerRoutes} />
+                    <Stack.Screen name="Main" component={CustomerRoutes} />
                 }
                 
                 <Stack.Screen name="OrderWizard" component={OrderWizard} />

@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Icon } from '../ui'
 import { useApp } from '../hooks'
 
-import Dashboard from '../screens/Home'
+import Main from '../screens/Main'
 import Orders from '../screens/CustomerScreens/Orders'
 
 const Tab = createBottomTabNavigator();
@@ -33,7 +33,7 @@ export const CustomerTabs = () => {
 
     return(
         <Tab.Navigator  screenOptions={{gestureEnabled : false, headerShown: false, animation: "fade"}} tabBar={(props) => Tabs(props, logout)}>
-            <Tab.Screen name="Home" component={Dashboard} />
+            <Tab.Screen name="Home" component={Main} />
             <Tab.Screen name="Orders" component={Orders} />
         </Tab.Navigator> 
     )
@@ -43,7 +43,7 @@ export const CustomerTabs = () => {
 export const CustomerRoutes = () => {
     return(
         <Stack.Navigator  screenOptions={{gestureEnabled : false, headerShown: false, animation: "fade_from_bottom"}}>
-            <Stack.Screen name="Home" component={CustomerTabs} />            
+            <Stack.Screen name="Main" component={CustomerTabs} />            
         </Stack.Navigator>
     )
     

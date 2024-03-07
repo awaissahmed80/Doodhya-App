@@ -18,7 +18,7 @@ export default function OrderWizard(){
     const { openBasket } = useApp()
     const [ state, setState ] = useState({})  
     
-    const { goBack } = useNavigation()    
+    const { navigate } = useNavigation()    
     const { items } = useBasket()
 
     useEffect(() => {
@@ -62,7 +62,7 @@ export default function OrderWizard(){
             <StatusBar  />
             <HStack borderBottomWidth={1} borderColor="gray.100"  py={4} px={3} alignItems="center" justifyContent="space-between" space={2}>
                 <Box w="20%" alignItems="flex-start">
-                    <IconButton rounded="full" onPress={goBack} size="md" icon={<Icon name="arrow-back" />} />
+                    <IconButton rounded="full" onPress={() => navigate('Main')} size="md" icon={<Icon name="arrow-back" />} />
                 </Box>
                 <Box flex={1} alignItems="center">
                     <Heading textAlign="center" size="sm">{item?.name}</Heading>

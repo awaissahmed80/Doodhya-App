@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Box, StatusBar, VStack, FormControl, Input, Button, Image, ScrollView, 
-    KeyboardAvoidingView, Text, Pressable, useColorModeValue
+    KeyboardAvoidingView, useColorModeValue, HStack
 } from 'native-base'
 import { useNavigation } from "@react-navigation/native"
 import { Icon, InputPassword } from '../../ui'
@@ -38,7 +38,10 @@ export default function Login(){
     return(
         
         <Box flex={1} safeArea variant="wrapper">
-            <StatusBar  />                        
+            <StatusBar  />         
+            <HStack px={4} py={3} justifyContent="flex-end">
+                <Button size="sm" rightIcon={<Icon name="chevron-forward" />}  py={1} onPress={() => navigate('Main')} variant="outline">Skip</Button>
+            </HStack>               
             <KeyboardAvoidingView flex={1} _ios={{ behavior: "padding" }}>
                 <ScrollView flex={1} keyboardShouldPersistTaps="always">
                     <Box w="100%" maxW={340} flex={1} mx="auto">
@@ -61,7 +64,7 @@ export default function Login(){
                                         value={state?.username || ''}
                                         onChangeText={(val) => setState({...state, username: val})}
                                         onSubmitEditing={() => focusInput('password')}
-                                        placeholder="Enter username"
+                                        placeholder="Enter username/email address"
                                                                                 
                                     />                            
                                 </FormControl>
@@ -82,13 +85,15 @@ export default function Login(){
                                         {/* <FormControl.ErrorMessage>{errors?.password}</FormControl.ErrorMessage>                                     */}
                                     </FormControl>
 
-                                    <Box alignSelf="flex-end"  my={0.5}>
-                                        <Pressable onPress={() => navigate('ForgotPassword')} _pressed={{ opacity: 0.5 }}>
-                                            <Text>Forget Password?</Text>
-                                        </Pressable>
-                                    </Box>
+                                    
         
                                     <Button rounded="lg" leftIcon={<Icon name="lock-open" type="ionicon" />} isLoading={isLoading} onPress={handleSubmit}>Login</Button>
+
+                                    <HStack alignItems="center" justifyContent="space-between"  my={0.5}>
+                                        <Button size="sm" px={0}  onPress={() => navigate('Signup')} variant="link">Create account</Button>
+                                        <Button size="sm" px={0}  onPress={() => navigate('ForgotPassword')} variant="link">Forgot Password?</Button>
+                                        
+                                    </HStack>
                                     
                                 </VStack>
                             </Box>

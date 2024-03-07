@@ -17,12 +17,23 @@ export const showToast = {
           })
     },
 
+
+    // toast.show({                    
+    //     title: 'Delivery added successfully!',
+    //     bg: "green.500",
+    //     minW: '90%',       
+    //     rounded: "full",             
+    //     shadow: "none",
+    //     _title: { px: 5},
+    //     placement: 'top',
+    //     isClosable: true,                                        
+    // })
     error: (message) => {        
         NBToast.show({
             render: () => {
               return (
-                <Box safeArea  zIndex={999} left={0} right={0} bg="red.500" top={0}    shadow="md" px="15px" py={5} rounded="none" mb={1}>
-                    <Text color="white" fontSize="sm">{message}</Text>
+                <Box  left={0} right={0} bg="red.700" top={0}  minW="90%"  shadow="none" px="10px" py={2} rounded="lg" mb={1}>
+                    <Text color="white">{message}</Text>
                 </Box>
               )
             },      
@@ -36,9 +47,9 @@ export const showToast = {
     info: (message) => {        
         NBToast.show({
             render: () => {
-              return (
-                <Box  zIndex={999} left={0} right={0} bg="blue.500" top={0} mt="-50px" minW="100%"  shadow="md" px="15px" py={5} pt={10}  rounded="none" mb={1}>
-                    <Text color="white" fontSize="sm">{message}</Text>
+              return (                
+                <Box left={0} right={0} bg="blue.700" top={0}  minW="90%"  shadow="none" px="10px" py={2} rounded="lg" mb={1}>
+                    <Text color="white" fontSize="md">{message}</Text>
                 </Box>
               )
             },      

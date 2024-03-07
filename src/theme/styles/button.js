@@ -30,7 +30,7 @@ export const button = {
             px: 3,
             py:1.5,
             _text:{
-                fontSize:14
+                fontSize:16
             }
         },
         md:{
@@ -82,8 +82,10 @@ export const button = {
         }),
         link:{
             px: 0,
+            
             _text:{
-                textDecorationLine: 'underline',
+                fontWeight: 400,
+                textDecorationLine: 'none',
                 px: 0
             },
             _pressed: {

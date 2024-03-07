@@ -52,7 +52,7 @@ export const input = {
                     bg: "gray.200"
                 },
                 _input:{
-                    selectionColor: '#EC1952'
+                    selectionColor: '#EC1952'                    
                 }
             },
              

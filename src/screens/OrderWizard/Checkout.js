@@ -18,7 +18,7 @@ export default function Checkout(){
     const { user } = useApp()  
     const dispatch = useDispatch()
     const toast = useToast()
-    const [ state, setState ] = useState({first_name: '', last_name: '', phone_number: '', street_address: '', town: ''})
+    const [ state, setState ] = useState({first_name: user?.first_name || '', last_name: user?.last_name || '', phone_number: '', street_address: '', town: ''})
     const [ errors, setErrors ] = useState(null)
     const [ createOrder, { isLoading }] = orderApi.useCreateMutation()    
     
@@ -174,7 +174,7 @@ export default function Checkout(){
                                 <Input 
                                     m={0}
                                     value={state?.street_address}
-                                        onChangeText={(val) => setState({...state, street_address: val})}
+                                    onChangeText={(val) => setState({...state, street_address: val})}
                                     h={10}
                                     rounded="none"
                                     variant="unstyled"

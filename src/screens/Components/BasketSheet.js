@@ -3,7 +3,7 @@ import { Box, Actionsheet, ScrollView,
     Heading, HStack, Text, Button, IconButton
 } from 'native-base'
 import { useBasket, useAuth } from "../../hooks"
-import { moneyFormat } from "../../helpers"
+import { moneyFormat, showToast } from "../../helpers"
 import { useDispatch } from "react-redux"
 import { basketActions } from "../../redux/slices"
 import { Icon } from "../../ui"
@@ -17,6 +17,11 @@ export const BasketSheet = ({ isOpen, onClose }) => {
     
     const total = items?.reduce((prev, curr) => prev + (curr?.quantity * curr?.price), 0)
 
+    const handleNavigate = () => {
+        onClose();
+        showToast.info('Please login to place an order');
+        navigate('Login')
+    }
     return(
         <Actionsheet isOpen={isOpen} onClose={onClose}>
             <Actionsheet.Content  p={0} pb={4}>            
@@ -69,7 +74,7 @@ export const BasketSheet = ({ isOpen, onClose }) => {
                             {user ?
                                 <Button onPress={() => { onClose(); navigate('DeliveryOptions') }} rounded="full">{`Select Delivery Options... `}</Button>
                             :
-                                <Button onPress={() => { onClose(); navigate('Login') }} rounded="full">{`Select Delivery Options... `}</Button>
+                                <Button onPress={handleNavigate} rounded="full">{`Select Delivery Options... `}</Button>
                             }
                         </>
                         :
